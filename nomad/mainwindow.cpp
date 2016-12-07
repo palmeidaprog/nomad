@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow){
     ui->setupUi(this);
+    //tray = new QSystemTrayIcon;
+    //QSystemTrayIcon t = &tray;
 }
 
 MainWindow::~MainWindow() {
@@ -41,12 +43,11 @@ void MainWindow::on_closeBtn_clicked()
     cout << "test" << endl;
 
     // create System Tray icon
-    QSystemTrayIcon tray;
-    if(tray.isSystemTrayAvailable()) {
+    if(tray->isSystemTrayAvailable()) {
 
-        tray.setIcon(QIcon("qrc:/x-mark-3-32.ico"));
-        tray.setVisible(true);
-        tray.show();
+        tray->setIcon(QIcon("qrc:/x-mark-3-32.ico"));
+        tray->setVisible(true);
+        tray->show();
     }
     else {
        cout << "Doesn't support System Tray" << endl;

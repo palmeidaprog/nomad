@@ -16,7 +16,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QSystemTrayIcon(new )
+    //QSystemTrayIcon(new )
 };
 
 #endif // MAINWINDOW_H

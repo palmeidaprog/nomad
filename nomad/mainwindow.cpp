@@ -1,5 +1,10 @@
 #include "mainwindow.h"
+#include <iostream>
 #include "ui_mainwindow.h"
+#include <QSystemTrayIcon>
+
+using std::cout;
+using std::endl;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow() {
     delete ui;
 }
+
+
+
 
 /*void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
@@ -27,3 +35,20 @@ MainWindow::~MainWindow() {
 }*/
 
 
+
+void MainWindow::on_closeBtn_clicked()
+{
+    cout << "test" << endl;
+
+    // create System Tray icon
+    QSystemTrayIcon tray;
+    if(tray.isSystemTrayAvailable()) {
+
+        tray.setIcon(QIcon("qrc:/x-mark-3-32.ico"));
+        tray.setVisible(true);
+        tray.show();
+    }
+    else {
+       cout << "Doesn't support System Tray" << endl;
+    }
+}

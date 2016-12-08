@@ -7,24 +7,56 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>143</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../images/images.qrc">
+    <normaloff>:/x-mark-3-32.ico</normaloff>:/x-mark-3-32.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QToolButton" name="toolButton">
+   <widget class="QPushButton" name="closeBtn">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>80</y>
-      <width>121</width>
-      <height>151</height>
+      <x>140</x>
+      <y>60</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Tray Icon</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>101</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>...</string>
+     <string>Start Enabled</string>
     </property>
    </widget>
   </widget>
@@ -34,24 +66,16 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>22</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">
     <property name="title">
      <string>Arquivo</string>
     </property>
-    <addaction name="actionTeste"/>
+    <addaction name="actionSair"/>
    </widget>
    <addaction name="menuArquivo"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionTeste">
@@ -59,8 +83,15 @@
     <string>Teste</string>
    </property>
   </action>
+  <action name="actionSair">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../images/images.qrc"/>
+ </resources>
  <connections/>
 </ui>
